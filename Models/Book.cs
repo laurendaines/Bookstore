@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
+//Model to call information stored about the books listed on the website
 namespace Bookstore.Models
 {
     public class Book

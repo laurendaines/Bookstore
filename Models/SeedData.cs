@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
+//Pre-loads the database with base information
 namespace Bookstore.Models
 {
     public static class SeedData
@@ -141,6 +142,7 @@ namespace Bookstore.Models
                         Price = 15.03
                     }
                 );
+                context.SaveChanges();
             }
         }
     }
