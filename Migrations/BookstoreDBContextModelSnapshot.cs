@@ -21,7 +21,10 @@ namespace Bookstore.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<string>("Author")
+                    b.Property<string>("AuthorFirstName")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("AuthorLastName")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Category")
@@ -38,6 +41,9 @@ namespace Bookstore.Migrations
 
                     b.Property<string>("Title")
                         .HasColumnType("TEXT");
+
+                    b.Property<string>("Pages")
+                        .HasColumnType("INTEGER");
 
                     b.HasKey("BookID");
 
