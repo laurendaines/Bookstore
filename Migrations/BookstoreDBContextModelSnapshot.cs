@@ -22,28 +22,34 @@ namespace Bookstore.Migrations
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("AuthorFirstName")
+                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("AuthorLastName")
+                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Category")
+                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("ISBN")
+                        .IsRequired()
                         .HasColumnType("TEXT");
+
+                    b.Property<int>("Pages")
+                        .HasColumnType("INTEGER");
 
                     b.Property<double>("Price")
                         .HasColumnType("REAL");
 
                     b.Property<string>("Publisher")
+                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Title")
+                        .IsRequired()
                         .HasColumnType("TEXT");
-
-                    b.Property<string>("Pages")
-                        .HasColumnType("INTEGER");
 
                     b.HasKey("BookID");
 

@@ -69,31 +69,3 @@ body {
   white-space: nowrap;
   line-height: 60px; /* Vertically center the text there */
 }
-
-#movies {
-    font-family: 'Open Sans', sans-serif;
-    border-collapse: collapse;
-    width: 100%;
-    text-align: center;
-}
-
-#movies td, #customers th {
-    border: 1px solid #ddd;
-    padding: 8px;
-}
-
-#movies tr:nth-child(even) {
-    background-color: #f2f2f2;
-}
-
-#movies tr:hover {
-    background-color: #ddd;
-}
-
-#movies th {
-    padding-top: 12px;
-    padding-bottom: 12px;
-    text-align: center;
-    background-color: #4CAF50;
-    color: white;
-}
