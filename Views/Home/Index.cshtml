@@ -2,32 +2,6 @@
 }
 @model BookListViewModel
 
-<style>
-    .pagination {
-        display: inline-block;
-    }
-
-    .pagination a {
-        color: black;
-        float: left;
-        padding: 8px 16px;
-        text-decoration: none;
-    }
-
-    .pagination a.active {
-        background-color: #4CAF50;
-        color: white;
-    }
-
-    .pagination a:hover:not(.active) {
-        background-color: #ddd;
-    }
-</style>
-
-<div class="text-center">
-    <h1 class="display-4">@ViewBag.Title</h1>
-</div>
-
 <!--Table to dynamically display all the information in the bookstoredb-->
 <table class="table table-striped">
 
@@ -45,18 +19,18 @@
     <tbody>
         @foreach (var x in Model.Books)
         {
-            <tr>
-                <td>@x.BookID</td>
-                <td>@x.Title</td>
-                <td>@x.AuthorFirstName @x.AuthorLastName</td>
-                <td>@x.Publisher</td>
-                <td>@x.ISBN</td>
-                <td>@x.Category</td>
-                <td>@x.Pages</td>
-                <td>$@x.Price</td>
-            </tr>
+            <partial name="BookSummary" model="x" />
         }
     </tbody>
 </table>
 
-<div class="pagination" page-model="@Model.PagingInfo" page-action="Index"></div>
+<!--dynamically create the page information and page advancement -->
+<div page-model="@Model.PagingInfo" 
+     page-action="Index" 
+     page-classes-enabled="true" 
+     page-class="btn" 
+     page-class-normal="btn-outline-dark" 
+     page-class-selected="btn-primary" 
+     page-url-category="@Model.Category"
+     class="btn-group pull-right m">
+</div>

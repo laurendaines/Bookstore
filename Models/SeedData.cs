@@ -184,7 +184,7 @@ namespace Bookstore.Models
                          AuthorFirstName = "Thomas",
                          AuthorLastName = "Harding",
                          Publisher = "Penguin",
-                         ISBN = "978-0141439655;",
+                         ISBN = "978-0141439655",
                          Category = "Fiction, Classic",
                          Price = 8.99,
                          Pages = 464
