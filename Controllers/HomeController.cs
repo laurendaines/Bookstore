@@ -16,27 +16,30 @@ namespace Bookstore.Controllers
 
         private IBookstoreRepository _repository;
 
+        //number of items per page
         public int PageSize = 5;
 
+        //constructor for the logger and repository
         public HomeController(ILogger<HomeController> logger, IBookstoreRepository repository)
         {
             _logger = logger;
             _repository = repository;
         }
 
-        public IActionResult Index(string category, int page = 1)
+        //index page that uses the repository to get the book data from db
+        public IActionResult Index(string category, int pageNum = 1)
         {
             return View(new BookListViewModel
             {
                 Books = _repository.Books
                         .Where(p => category == null || p.Category == category)
                         .OrderBy(p => p.BookID)
-                        .Skip((page - 1) * PageSize)
+                        .Skip((pageNum - 1) * PageSize)
                         .Take(PageSize)
                     ,
                 PagingInfo = new PagingInfo
                 {
-                    CurrentPage = page,
+                    CurrentPage = pageNum,
                     ItemsPerPage = PageSize,
                     TotalNumItems = category == null ? _repository.Books.Count() :
                         _repository.Books.Where (x => x.Category == category).Count()
